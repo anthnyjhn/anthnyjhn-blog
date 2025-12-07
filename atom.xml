@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Anthony John C.</title>
+  
+  
+  <link href="https://blog.anthnyjhn.com/atom.xml" rel="self"/>
+  
+  <link href="https://blog.anthnyjhn.com/"/>
+  <updated>2025-12-07T12:34:10.444Z</updated>
+  <id>https://blog.anthnyjhn.com/</id>
+  
+  <author>
+    <name>Anthony John Caronongan</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>sample blog</title>
+    <link href="https://blog.anthnyjhn.com/world-of-ai/"/>
+    <id>https://blog.anthnyjhn.com/world-of-ai/</id>
+    <published>2025-12-07T12:31:22.000Z</published>
+    <updated>2025-12-07T12:34:10.444Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="WORLD-OF-AI"><a href="#WORLD-OF-AI" class="headerlink" title="WORLD OF AI"></a>WORLD OF AI</h1><p>This is the world we’re currently living in.</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;WORLD-OF-AI&quot;&gt;&lt;a href=&quot;#WORLD-OF-AI&quot; class=&quot;headerlink&quot; title=&quot;WORLD OF AI&quot;&gt;&lt;/a&gt;WORLD OF AI&lt;/h1&gt;&lt;p&gt;This is the world we’re currently </summary>
+      
+    
+    
+    
+    <category term="tech" scheme="https://blog.anthnyjhn.com/categories/tech/"/>
+    
+    
+    <category term="ai" scheme="https://blog.anthnyjhn.com/tags/ai/"/>
+    
+    <category term="llm" scheme="https://blog.anthnyjhn.com/tags/llm/"/>
+    
+  </entry>
+  
+</feed>
