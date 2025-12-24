@@ -356,13 +356,14 @@ body {
 #logo,
 #subtitle {
   text-decoration: none;
-  color: #fff;
+  color: #414141;
   font-weight: 300;
   text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 #logo {
   font-size: 40px;
   line-height: 40px;
+  font-weight: 500;
   letter-spacing: 2px;
 }
 #subtitle {
@@ -380,8 +381,8 @@ body {
 .nav-icon,
 .main-nav-link {
   float: left;
-  color: #fff;
-  opacity: 0.6;
+  color: #000;
+  opacity: 0.9;
   text-decoration: none;
   text-shadow: 0 1px rgba(0,0,0,0.2);
   -webkit-transition: opacity 0.2s;
@@ -452,7 +453,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background: #fff;
+  background: #000;
   padding: 5px 15px;
   border-radius: 15px;
   -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.3);
@@ -478,7 +479,7 @@ body {
   font: 13px ForkAwesome;
   border: none;
   background: none;
-  color: #bbb;
+  color: #000;
   cursor: pointer;
 }
 .search-form-submit:hover,
@@ -1038,7 +1039,7 @@ a.article-title:hover {
   color: #ddd;
 }
 #footer {
-  background: #262a30;
+  background: #141414;
   padding: 50px 0;
   border-top: 1px solid #ddd;
   color: #999;
