@@ -6,16 +6,16 @@
   
   <title>Building my first Homelab Server | Anthony John C.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="This is the story of how I built my first homelab server for under AUD $60, what I planned to do with it, the problems I ran into, and what I learned along the way.">
+  <meta name="description" content="This is the process of how I built my first homelab server for under AUD $60, what I planned to do with it and what I learned along the way.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Building my first Homelab Server">
 <meta property="og:url" content="https://blog.anthnyjhn.com/BuildingMyFirstHomeServer/index.html">
 <meta property="og:site_name" content="Anthony John C.">
-<meta property="og:description" content="This is the story of how I built my first homelab server for under AUD $60, what I planned to do with it, the problems I ran into, and what I learned along the way.">
+<meta property="og:description" content="This is the process of how I built my first homelab server for under AUD $60, what I planned to do with it and what I learned along the way.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://blog.anthnyjhn.com/BuildingMyFirstHomeServer/powerdraw.jpg">
 <meta property="article:published_time" content="2025-11-28T22:27:15.000Z">
-<meta property="article:modified_time" content="2025-12-24T03:39:57.379Z">
+<meta property="article:modified_time" content="2025-12-24T05:06:43.458Z">
 <meta property="article:author" content="Anthony John Caronongan">
 <meta property="article:tag" content="docker">
 <meta property="article:tag" content="homelab">
@@ -145,12 +145,12 @@
       
           <img src="/./BuildingMyFirstHomeServer/blog-banner.jpg" width="600" alt="Building my first Homelab Server" itemprop="image">
       
-       <p>This is the story of how I built my first homelab server for under <strong>AUD $60</strong>, what I planned to do with it, the problems I ran into, and what I learned along the way.</p>
+       <p>This is the process of how I built my first homelab server for under <strong>AUD $60</strong>, what I planned to do with it and what I learned along the way.</p>
 <span id="more"></span>
 
-<h2 id="The-Story"><a href="#The-Story" class="headerlink" title="The Story"></a>The Story</h2><p>One night, I was casually browsing eBay with no intention of buying anything. I came across an <strong>HP ProDesk 400 G2 SFF</strong> listed for <strong>$60</strong>. It came with an Intel i5-4590, 4GB of RAM, and a 1TB hard drive.</p>
+<h2 id="The-Story"><a href="#The-Story" class="headerlink" title="The Story"></a>The Story</h2><p>One night, I was casually browsing eBay with no intention of buying anything. I came across an <strong>HP ProDesk 400 G2 SFF</strong> listed for <strong>$60</strong>.</p>
 <p>I knew this machine was never designed to be a server. It is a small office desktop built for basic work, not 24&#x2F;7 uptime. But for $60, it felt like the perfect machine to experiment on without worrying about damaging expensive hardware. I grabbed it immediately.</p>
-<h2 id="The-Plan"><a href="#The-Plan" class="headerlink" title="The Plan"></a>The Plan</h2><p>Before even turning it on, I had a rough idea of what I wanted this server to do. Nothing fancy, just practical services I could actually use at home.</p>
+<h2 id="The-Plan"><a href="#The-Plan" class="headerlink" title="The Plan"></a>The Plan</h2><p>Before it even arrive my house, I had a rough idea of what I wanted this server to do. Nothing fancy, just practical services I could actually use.</p>
 <p>My goals were:</p>
 <ul>
 <li>Store files and backups</li>
@@ -158,7 +158,7 @@
 <li>Run Docker containers</li>
 <li>Experiment with light AI models</li>
 </ul>
-<p>I also wanted this server to force me to learn Linux, networking, and system administration properly instead of relying on theory alone.</p>
+<p>I also wanted this server to force me to learn Linux server, networking, and system administration properly instead of relying on theory alone.</p>
 <h2 id="Hardware-and-Upgrades"><a href="#Hardware-and-Upgrades" class="headerlink" title="Hardware and Upgrades"></a>Hardware and Upgrades</h2><p>The base specs were simple:</p>
 <ul>
 <li>HP ProDesk 400 G2 SFF</li>
@@ -170,19 +170,19 @@
 <p>The original 1TB hard drive stayed in the system and was used for file storage.</p>
 <h2 id="Choosing-an-Operating-System"><a href="#Choosing-an-Operating-System" class="headerlink" title="Choosing an Operating System"></a>Choosing an Operating System</h2><p>At first, I planned to run <strong>Proxmox</strong>. It is popular in the homelab community and seemed like the “correct” choice but I realised it’s not begginer friendly.</p>
 <p>Instead, I installed a <strong>Ubuntu Server 24.04 LTS</strong> and run <strong>CasaOS</strong> on it. This kept resource usage low and made the system much simpler to manage.</p>
-<h2 id="The-Setup"><a href="#The-Setup" class="headerlink" title="The Setup"></a>The Setup</h2><p>Since I didn’t want to keep a monitor and keyboard attached to a $40 PC sitting in the corner, my first priority was making it completely autonomous.</p>
+<h2 id="The-Setup"><a href="#The-Setup" class="headerlink" title="The Setup"></a>The Setup</h2><p>Since I didn’t want to keep a monitor and keyboard attached to a $40 PC sitting in the corner, my first priority was making it completely autonomous and remotely accessible.</p>
 <ul>
-<li><p><strong>Networking &amp; Remote Access</strong> I needed to manage the server from my main laptop without it constantly “moving” around the network. I set a static IP on my router and enabled SSH immediately. This meant I could unplug the monitor 10 minutes after the first boot and never plug it back in.</p>
+<li><p><strong>Networking &amp; Remote Access</strong> I needed to manage the server from my main laptop without it constantly “moving” around the network. I set a static IP on my router and enabled SSH immediately.</p>
 </li>
-<li><p><strong>Headless Optimization</strong> Because this machine lives headless (no display), I had to ensure it could recover on its own if the power flickered. I tweaked the bootloader to skip graphical checks and set up an automated login. Now, when I hit the power button, it’s ready to accept commands instantly without waiting for a user to sign in physically.</p>
+<li><p><strong>Headless Setup</strong> Because this machine lives headless (no display), I had to ensure it could recover on its own if the power flickered. I tweaked the bootloader to skip graphical checks and set up an automated login. Now, when I hit the power button, it’s ready to accept commands instantly without waiting for a user to sign in physically.</p>
 </li>
-<li><p><strong>CasaOS Integration</strong> I didn’t want to spend my life staring at a command line. I installed CasaOS to give the server a friendly, visual dashboard. It acts as the “face” of the homelab, making it easy to manage Docker containers and check system health at a glance.</p>
+<li><p><strong>CasaOS integration</strong> I installed CasaOS to give the server a friendly, visual dashboard making it easy to manage Docker containers and check system status at a glance.</p>
 </li>
-<li><p><strong>Storage &amp; Sharing</strong> To make use of that 1TB drive, I set up Samba for file sharing. The tricky part was configuring it to play nice with both my Windows gaming PC and my MacBook. After some tweaking, I have a reliable network share that works seamlessly across different operating systems for backups and media.</p>
+<li><p><strong>Storage &amp; Sharing</strong> To make use of that 1TB drive, I set up Samba for file sharing. The tricky part was configuring it to play nice with both my Windows gaming PC and my Apple devices. After some tweaking, I have a reliable network share that works seamlessly across different operating systems for backups and media.</p>
 </li>
-<li><p><strong>Ad-Blocking</strong> I deployed Pi-hole to act as a network-wide ad blocker. It’s not magic—some stubborn ads (like on YouTube) still sneak through—but it has significantly cleaned up the web browsing experience on my phone and tablet without needing browser extensions.</p>
+<li><p><strong>Ad-Blocking</strong> I used Pi-hole to act as a network-wide ad blocker. It has significantly cleaned up and blocked most of the ads especially on Netflix that I access on my phone and TV without needing browser extensions.</p>
 </li>
-<li><p><strong>Local AI Experiments</strong> This was the most fun part. I’m using <strong>Belullama</strong>, a fantastic tool that bundles Ollama and OpenWebUI together. Instead of wrestling with Python scripts in a terminal to run AI models, this gives me a clean, ChatGPT-like interface. It allows me to easily download and test different models right from the browser.</p>
+<li><p><strong>Local AI Experiments</strong> This was the most fun part. I’m using <strong>Belullama</strong>, a very good app that bundles Ollama and OpenWebUI together. This gives me a clean, ChatGPT-like interface. It allows me to easily download and test different models right from the browser.</p>
 </li>
 </ul>
 <blockquote>
@@ -191,15 +191,15 @@
 <h2 id="Power-Efficiency"><a href="#Power-Efficiency" class="headerlink" title="Power Efficiency"></a>Power Efficiency</h2><img src="powerdraw.jpg" width="300" alt="Average power draw">
 
 <p>One of my main concerns was how much this would cost to run 24&#x2F;7. Surprisingly, the machine is incredibly efficient. It averages a power draw of just <strong>22W</strong>, which totals around <strong>15 kWh per month</strong>. At current rates, that adds only about ~<strong>AUD $4.60</strong> to my monthly electricity bill. Considering the utility it provides, I’d say it’s worth every penny.</p>
-<p>I use Meross smart plug to monitor energy consumption and so I can remotely shutdown or turn on my server.</p>
-<h2 id="Final-Thoughts"><a href="#Final-Thoughts" class="headerlink" title="Final Thoughts"></a>Final Thoughts</h2><p>This server isn’t a powerhouse. It’s not going to win any benchmark competitions, and it certainly isn’t built for enterprise-grade workloads but it works. It sits quietly in the corner blocking ads, backing up my files, and running my services without complaint.</p>
+<p>I use Meross smart plug to monitor energy consumption.</p>
+<h2 id="Final-Thoughts"><a href="#Final-Thoughts" class="headerlink" title="Final Thoughts"></a>Final Thoughts</h2><p>This server isn’t a powerhouse. It’s not going to win any benchmark competitions, and it certainly isn’t built for enterprise-grade workloads but it works. It just sits quietly in the corner blocking ads, backing up my files, and running my services without complaint.</p>
 <p>If you have been thinking about starting a homelab, don’t wait for the “perfect” gear. Just start. You will learn infinitely more by building than you ever will by just reading about it.</p>
  
     </div>
     <footer class="article-footer">
       <a
         data-url="https://blog.anthnyjhn.com/BuildingMyFirstHomeServer/"
-        data-id="cuidp_FTSzJfeA10Niz-iRTfT"
+        data-id="cuidb9lWAUQiWlVXnQTMd2HE8"
         data-title="Building my first Homelab Server"
         class="article-share-link"
         ><span class="fa fa-share"></span
